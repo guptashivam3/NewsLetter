@@ -304,6 +304,75 @@ If **YES** → You can safely enable the schedule → It will auto-run weekly �
 
 ---
 
+## 🖼 Why Use GitHub for Hosting Newsletter Images (and More)?
+
+In this workflow, **newsletter images** (like banners, charts, and section visuals) are hosted on **GitHub** instead of embedding them directly inside the workflow.
+
+---
+
+### ✅ Why It’s Necessary
+
+**Stable Image URLs**  
+- Dynamic newsletters need reliable links that won’t expire.  
+- GitHub provides **permanent RAW image URLs** that can be safely referenced in the HTML newsletter.  
+
+**Lightweight Workflow**  
+- No need to store or upload images directly inside n8n; GitHub acts as a **central asset repository**.  
+
+**Easy Updates**  
+- Update an image in GitHub, and the newsletter **automatically uses the new version** without workflow changes.  
+
+---
+
+### 🛠 How It’s Used
+
+1. **Images are stored in a GitHub repo** (e.g., `/newsletter-assets/`).  
+2. Each image has a **direct RAW URL**, for example:  
+
+   ```text
+   https://raw.githubusercontent.com/<username>/<repo>/main/newsletter-assets/PFAS_banner.png
+   
+3. The HTML newsletter references these URLs in <img> tags
+    ```text
+    <img src="https://raw.githubusercontent.com/.../PFAS_banner.png" alt="PFAS Banner" />
+4. When converted to PDF or sent via email, the newsletter fetches images directly from GitHub.
+
+   
+### 🚀 Advantages of Using GitHub
+
+✅ **Free & Reliable Hosting**  
+- GitHub is stable, globally accessible, and doesn’t require extra hosting services.  
+
+✅ **Version Control & History**  
+- Every change to images (or any asset) is tracked.  
+- You can see who updated what and roll back to previous versions anytime.  
+
+✅ **Centralized Asset Management**  
+- All newsletter assets (banners, charts, icons) are stored in **one repo**, making it easier to manage.  
+
+✅ **Static URLs for Automation**  
+- GitHub RAW URLs don’t change, making them perfect for automated workflows like **n8n HTML → PDF generation**.  
+
+✅ **Project Management Features**  
+- You can use **Issues, Projects, and Discussions** inside the same repo to:  
+  - Track newsletter updates  
+  - Plan improvements  
+  - Manage tasks for your team  
+
+✅ **Team Collaboration**  
+- Multiple team members can contribute to the repo (images, docs, workflow updates) with proper permissions.  
+- **Pull Requests** allow easy code/content reviews before updates go live.  
+
+✅ **Documentation Hub**  
+- GitHub can also host the **README & workflow docs** in the same repo.  
+- Anyone can view, edit, and maintain docs alongside the workflow assets.  
+
+✅ **Integration with CI/CD**  
+- You can integrate **GitHub Actions** for automated testing, validation, or deployments if needed.  
+
+✅ **Backup & Accessibility**  
+- Your assets and docs are safely backed up in **GitHub’s cloud**.  
+- Accessible anytime, from anywhere.  
 
 
 ## 🛠 Future Improvements  
